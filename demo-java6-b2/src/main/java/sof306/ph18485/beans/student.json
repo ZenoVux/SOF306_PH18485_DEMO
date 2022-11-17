@@ -1,0 +1,13 @@
+{
+	"name": "Nguyen Van A",
+	"gender": true,
+	"marks": 7.5,
+	"contact": {
+		"email": "teonv@gmail.com",
+		"phone": "0111111"
+	},
+	"subject": [
+		"WEB",
+		"COM"
+	]
+}

@@ -1,0 +1,52 @@
+[
+	{
+		"name": "Nam1",
+		"gender": true,
+		"mark": 2.0,
+		"contact":{
+			"email": "teonv@gmail.com",
+			"phone": "0111111"
+		},
+		"subject":["WEB","COM"]
+	},
+	{
+		"name": "nam2",
+		"gender": false,
+		"mark": 5.0,
+		"contact":{
+			"email": "teonv@gmail.com",
+			"phone": "0111111"
+		},
+		"subject":["WEB"]
+	},
+	{
+		"name": "nam3",
+		"gender": false,
+		"mark": 7.0,
+		"contact":{
+			"email": "teonv@gmail.com",
+			"phone": "0111111"
+		},
+		"subject":["WEB","COM"]
+	},
+	{
+		"name": "Nam4",
+		"gender": true,
+		"mark": 2.0,
+		"contact":{
+			"email": "teonv@gmail.com",
+			"phone": "0111111"
+		},
+		"subject":["WEB","COM"]
+	},
+		{
+		"name": "Nam5",
+		"gender": false,
+		"mark": 9.5,
+		"contact":{
+			"email": "teonv@gmail.com",
+			"phone": "0111111"
+		},
+		"subject":["WEB","COM","GG"]
+	}
+]

@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Nguyen Van A",
+		"gender": true,
+		"mark": 7.5,
+		"email": "teonv@gmail.com"
+	},
+	{
+		"name": "Nguyen Van B",
+		"gender": false,
+		"mark": 2.0,
+		"email": "teonv@gmail.com"
+		
+	},
+	{
+		"name": "Nguyen Van C",
+		"gender": true,
+		"mark": 3,
+		"email": "teonv@gmail.com"
+	},
+	{
+		"name": "Nguyen Van D",
+		"gender": false,
+		"mark": 7.5,
+		"email": "teonv@gmail.com"
+	}
+]

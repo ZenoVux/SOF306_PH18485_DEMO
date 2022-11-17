@@ -1,0 +1,13 @@
+{
+	"name": "Nam",
+	"gender": true,
+	"mark": 7.5,
+	"contact": {
+		"email": "teonv@gmail.com",
+		"phone": "0111111"
+	},
+	"subject": [
+		"WEB",
+		"COM"
+	]
+}

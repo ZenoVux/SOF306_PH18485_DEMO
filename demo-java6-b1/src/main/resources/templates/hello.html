@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="${message}"></h1>
+	<h1>[[${message}]]</h1>
+	<!-- 
+	<h1 th:text="${#authentication.name}"></h1>
+	<h1 th:text="${#authentication.authorities}"></h1>
+	 -->
+</body>
+</html>
