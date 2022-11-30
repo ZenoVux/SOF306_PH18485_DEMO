@@ -1,4 +1,4 @@
-package sof306.ph18485;
+package sof306.ph18485.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
