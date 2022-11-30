@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main class="py-5">
+		<div class="container px-4 px-lg-5">
+			<div class="row">
+				<div class="col-md-8 mb-2">
+					<!-- <div class="title">
+                    </div> -->
+					<div class="card" th:fragment="shopping-cart">
+						<div class="card-header">
+							<div class="row">
+								<div class="col">
+									SHOPPING CART
+								</div>
+								<div class="col align-self-center text-right text-muted">3 items</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<table class="table table-hover">
+								<tbody>
+									<tr ng-repeat="item in cart.items">
+										<td class="row">
+											<div class="row main align-items-center">
+												<div class="col-2"><img class="img-fluid" src="/images/1GrakTl.jpg">
+												</div>
+												<div class="col">
+													<div class="row text-muted">{{item.category.name}}</div>
+													<div class="row">{{item.name}}</div>
+												</div>
+												<div class="col text-center">
+													{{item.price}}
+												</div>
+												<div class="col">
+													<input ng-change="cart.saveToLocalStorage()"
+														ng-model="item.quantity" class="form-control form-control-sm"
+														type="number" value="{{item.quantity}}" min="1">
+												</div>
+												<div class="col text-center">{{item.price * item.quantity}}
+												</div>
+												<div class="col">
+													<button ng-click="cart.remove(item.id)" type="button"
+														class="btn btn-danger btn-sm btn-remove"><i
+															class="bi bi-trash-fill"></i></button>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<button ng-click="cart.clear()" class="btn btn-danger">Clear</button>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-4 mb-2">
+					<div class="card">
+						<div class="card-header">
+							Summary
+						</div>
+						<div class="card-body">
+							<div class="row mb-2">
+								<div class="col">ITEMS 3</div>
+								<div class="col text-right">132.000 ₫</div>
+							</div>
+							<form>
+								<div class="mb-2">
+									<label class="form-label">SHIPPING</label>
+									<select class="form-select">
+										<option class="text-muted">Standard-Delivery- &euro;5.00</option>
+									</select>
+								</div>
+								<div class="mb-2">
+									<label class="form-label">GIVE CODE</label>
+									<input class="form-control" placeholder="Enter your code">
+								</div>
+							</form>
+							<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+								<div class="col">TOTAL PRICE</div>
+								<div class="col text-right">{{cart.amount}}</div>
+							</div>
+							<a th:href="@{/order/checkout}" class="btn btn-success">CHECKOUT</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

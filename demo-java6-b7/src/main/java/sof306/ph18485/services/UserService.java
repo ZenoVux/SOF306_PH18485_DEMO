@@ -34,6 +34,7 @@ public class UserService implements UserDetailsService {
 					.collect(Collectors.toList()).toArray(new String[0]);
 			return User.withUsername(username).password(pe.encode(password)).roles(roles).build();
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new UsernameNotFoundException(username + "không tồn tại");
 		}
 	}

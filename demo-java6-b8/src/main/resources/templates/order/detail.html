@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+	<main class="py-5">
+		<div class="container px-4 px-lg-5">
+			<div class="row">
+				<div class="col-md-8 mb-2">
+					<div class="card mb-2">
+						<div class="card-header">ORDER INFO</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-4">
+									<label for="username" class="form-label">Order number</label>
+									<input type="text" class="form-control" id="username" th:value="${order.id}"
+										readonly>
+								</div>
+								<div class="col-md-4">
+									<label for="username" class="form-label">Purchaser</label>
+									<input type="text" class="form-control" id="username"
+										th:value="${order.account.username}" readonly>
+								</div>
+								<div class="col-md-4">
+									<label for="input-date" class="form-label">Order date</label> <input type="text"
+										class="form-control" id="input-date" th:value="${order.createDate}" readonly>
+								</div>
+								<div class="col-12">
+									<label for="input-address" class="form-label">Address</label>
+									<textarea class="form-control" id="input-address" rows="3"
+										readonly>[[${order.address}]]</textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card mb-2">
+						<div class="card-header">ORDER LINES</div>
+						<div class="card-body">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Name</th>
+										<th scope="col">Price</th>
+										<th scope="col">Quantity</th>
+										<th scope="col">Amount</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="orderDetail : ${order.orderDetails}">
+										<th scope="row">[[${orderDetail.id}]]</th>
+										<td>[[${orderDetail.product.name}]]</td>
+										<td>[[${orderDetail.product.price}]]</td>
+										<td>[[${orderDetail.quantity}]]</td>
+										<td>[[${orderDetail.product.price * orderDetail.quantity}]]</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</main>
+</body>
+
+</html>
