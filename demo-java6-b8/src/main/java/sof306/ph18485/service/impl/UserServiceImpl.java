@@ -15,7 +15,7 @@ import sof306.ph18485.entity.Account;
 import sof306.ph18485.service.AccountService;
 
 @Service
-public class UserService implements UserDetailsService  {
+public class UserServiceImpl implements UserDetailsService  {
 
 	@Autowired
 	private AccountService accountService;
