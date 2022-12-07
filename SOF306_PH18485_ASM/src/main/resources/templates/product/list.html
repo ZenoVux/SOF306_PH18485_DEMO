@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main}, 'Trang chủ')}">
+
+<body>
+	<main>
+		<div class="container px-4 px-lg-5 mt-5">
+			<h4>NEW PRODUCT</h4>
+			<hr>
+			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				<div class="col mb-5" th:each="p : ${items}">
+					<div class="card h-100">
+						<!-- Product image-->
+						<img class="card-img-top" th:src="@{|/assets/images/${p.photo}|}"
+							alt="..." />
+						<!-- Product details-->
+						<div class="card-body p-4">
+							<div class="text-center">
+								<!-- Product name-->
+								<h5 class="fw-bolder" th:text="${p.name}"></h5>
+								<!-- Product price-->
+								[[${p.price}]]$
+							</div>
+						</div>
+						<!-- Product actions-->
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+							<div class="d-flex justify-content-center">
+								<a class="btn btn-outline-dark me-2" th:href="@{|/product/${p.code}|}">Xem chi
+									tiết</a>
+								<button class="btn btn-outline-dark me-2" th:attr="ng-click=@{|cart.add(${p.id})|}">
+									<i class="bi bi-cart-plus-fill"></i>
+								</button>
+                    			<th:block th:if="${#request.remoteUser}">
+									<button class="btn btn-outline-dark" th:attr="ng-click=@{|cart.add(${p.id})|}">
+										<i class="bi bi-heart-fill"></i>
+									</button>
+								</th:block>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div th:each="category : ${categories}">
+				<h4><span class="text-uppercase">[[${category.name}]]</span></h4>
+				<hr>
+				aaaaaaaaaa
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

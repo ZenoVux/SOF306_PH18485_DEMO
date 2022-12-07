@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main}, '')}">
+
+<body>
+	<main class="py-5">
+		<div class="container px-4 px-lg-5">
+			<div class="row">
+				<div class="col-md-8 mb-2">
+					<!-- <div class="card">
+						<div class="card-header">
+							<div class="row">
+								<div class="col">
+									LIST PRODUCT
+								</div>
+								<div class="col align-self-center text-right text-muted">3 items</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<table class="table table-hover">
+								<tbody>
+									<tr ng-repeat="item in cart.items">
+										<td class="row">
+											<div class="row align-items-center">
+												<div class="col-2">
+													<img class="img-fluid" src="/assets/images/{{item.photo}}">
+												</div>
+												<div class="col">
+													<div class="row text-muted">{{item.category.name}}</div>
+													<div class="row">{{item.name}}</div>
+												</div>
+												<div class="col text-center">
+													{{item.price}}
+												</div>
+												<div class="col text-center">
+													{{item.quantity}}
+												</div>
+												<div class="col text-center">{{item.price * item.quantity}}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="card mt-2">
+						<div class="card-header">Featured</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6">
+									<label for="username" class="form-label">Purchaser</label>
+									<input type="text" class="form-control" id="username"
+										th:value="${#request.remoteUser}" readonly>
+								</div>
+								<div class="col-md-6">
+									<label for="input-date" class="form-label">Order date</label> <input type="text"
+										class="form-control" id="input-date"
+										value="{{order.createDate | date : 'dd-MM-yyyy'}}" readonly>
+								</div>
+								<div class="col-12">
+									<label for="input-address" class="form-label">Address</label>
+									<textarea ng-model="order.address" class="form-control" id="input-address"
+										rows="3"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer">
+							<button ng-click="order.purchase()" type="button" class="btn btn-success">Purchase</button>
+						</div>
+					</div>
+					 -->
+					<div class="accordion mb-2" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									ĐANH SÁCH ĐẶT HÀNG
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<table class="table table-hover">
+										<tbody>
+											<tr ng-repeat="item in cart.items">
+												<td class="row">
+													<div class="row align-items-center">
+														<div class="col-2">
+															<img class="img-fluid" src="/assets/images/{{item.photo}}">
+														</div>
+														<div class="col">
+															<div class="row text-muted">{{item.category.name}}</div>
+															<div class="row">{{item.name}}</div>
+														</div>
+														<div class="col text-center">
+															{{item.price}}
+														</div>
+														<div class="col text-center">
+															{{item.quantity}}
+														</div>
+														<div class="col text-center">{{item.price * item.quantity}}
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									THÔNG TIN KHÁCH HÀNG
+								</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<div class="row">
+										<input type="hidden" name="username">
+										<div class="col-md-6 mb-2">
+											<label for="username" class="form-label">Khách hàng</label>
+											<input type="text" class="form-control" id="username"
+												th:value="${account.fullname}" readonly>
+										</div>
+										<div class="col-md-6 mb-2">
+											<label for="sdt" class="form-label">SĐT</label>
+											<input type="text" class="form-control" id="sdt">
+										</div>
+										<div class="col-md-6 mb-2">
+											<label for="username" class="form-label">Tỉnh/Thành phố</label>
+											<select class="form-select">
+												<option class="text-muted">Tỉnh Thái Bình</option>
+											</select>
+										</div>
+										<div class="col-md-6 mb-2">
+											<label for="input-date" class="form-label">Quận/Huyện</label>
+											<select class="form-select">
+												<option class="text-muted">Huyện Tiền Hải</option>
+											</select>
+										</div>
+										<div class="col-12 mb-2">
+											<label for="input-address" class="form-label">Địa chỉ</label>
+											<textarea ng-model="order.address" class="form-control" id="input-address"
+												rows="3"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									HÌNH THỨC THANH TOÁN
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault"
+											id="flexRadioDefault1" checked>
+										<label class="form-check-label" for="flexRadioDefault1">
+											Thanh toán khi nhận hàng
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault"
+											id="flexRadioDefault2">
+										<label class="form-check-label" for="flexRadioDefault2">
+											Thanh toán chuyển khoản
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-4 mb-2">
+					<div class="card">
+						<div class="card-body">
+							<div class="row mb-2">
+								<div class="col">Tiền hàng</div>
+								<div class="col text-right">{{cart.amount}} VNĐ</div>
+							</div>
+							<form>
+								<div class="mb-2">
+									<label class="form-label">Phí vận chuyển</label>
+									<select class="form-select">
+										<option class="text-muted">GHTK - 22.000 VNĐ</option>
+									</select>
+								</div>
+								<div class="mb-2">
+									<label class="form-label">Mã giảm giá</label>
+									<input class="form-control" placeholder="Enter your code">
+								</div>
+							</form>
+							<hr>
+							<div class="row mb-3">
+								<div class="col">Tổng cộng</div>
+								<div class="col text-right">{{cart.amount}} VNĐ</div>
+							</div>
+							<div class="d-grid gap-2">
+								<a th:href="@{/order/checkout}" class="btn btn-success">Xác nhận</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

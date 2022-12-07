@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main}, 'Đăng nhập')}">
+
+<body>
+	<main class="py-5">
+		<div class="container px-4 px-lg-5">
+			<div class="login">
+				<div th:if="${message}" class="alert alert-danger" role="alert">
+					[[${message}]]</div>
+				<form th:action="@{/login}" method="POST">
+					<div class="mb-3">
+						<label for="input-username" class="form-label">Username</label> <input
+							type="text" class="form-control" id="input-username"
+							name="username">
+					</div>
+					<div class="mb-3">
+						<label for="input-password" class="form-label">Password</label> <input
+							type="password" class="form-control" id="input-password"
+							name="password">
+					</div>
+					<div class="mb-3 form-check">
+						<input type="checkbox" class="form-check-input" id="chk-remember"
+							name="remember-me"> <label class="form-check-label"
+							for="chk-remember">Remember me?</label>
+					</div>
+					<div class="d-grid gap-2">
+						<button class="btn btn-outline-dark">Đăng nhập</button>
+						<hr>
+						<a th:href="@{/oauth2/authorization/google}"
+							class="btn btn-outline-dark">
+							<div class="d-flex justify-content-between">
+								<i class="bi bi-google"></i>
+								<span class="w-100">Google</span>
+							</div>
+						</a>
+						<a th:href="@{/oauth2/authorization/facebook}"
+							class="btn btn-outline-dark">
+							<div class="d-flex justify-content-between">
+							<i class="bi bi-facebook"></i>
+								<span class="w-100">Facebook</span>
+							</div>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
